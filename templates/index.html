@@ -43,8 +43,10 @@
                                     <div class="header bg-primary text-white py-3">
                                         <h2 class="text-center fw-bold">Send Message</h2>
                                     </div>
-                                    <div class="description p-3 py-4">
+                                    <div class="description p-5 py-4">
                                         <form action="" class="ui form" id="contact-form">
+                                            <div class="form-messages"><div class="alert" style="display: none"></div></div>
+                                            {% csrf_token %}
                                             <div class="field pb-3">
                                                 <label for="name">Name</label>
                                                 <div class="ui left icon fluid input">
@@ -91,6 +93,7 @@
         {% endblock %}
 
         {% block js %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script type="text/javascript" src="{% static 'assets/js/contact.js' %}"></script>
         {% endblock %}
