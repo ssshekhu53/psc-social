@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-jti4x8ro9anowjcg*l3v+&_9r8@y+=aof^zk5h%_$f+%8sq(k)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'psc-social.herokuapp.com',
+    'localhost'
+]
 
 
 # Application definition
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'psc_social.urls'
