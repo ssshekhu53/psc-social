@@ -16,7 +16,7 @@ a {
 
 .navbar.bg-blue {
     box-shadow: 0 8px 40px #696899de;
-    background-image: linear-gradient(to right, #160040, #1a034f, #20025f, #25016f, #2b0080);
+    background-image: linear-gradient(to right top, #604495, #5e3ba5, #5a30b5, #5523c4, #4e0bd4);
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -63,22 +63,20 @@ a {
 }
 
 footer {
-    background-image: linear-gradient(to left, #160040, #1a034f, #20025f, #25016f, #2b0080);
+    background-image: linear-gradient(to right bottom, #604495, #5e3ba5, #5a30b5, #5523c4, #4e0bd4);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
     padding: 55px 50px;
-    margin-top: 80px;
     bottom: 0;
     color: #fff
 }
 
 .footer-navigation h3 {
-    margin: 0;
     font: normal 36px Cookie, cursive;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
     color: #fff
 }
 
@@ -188,7 +186,7 @@ footer .footer-contacts .text-decoration-none:hover {
 }
 
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 section h2.section-heading {
@@ -208,7 +206,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 80px 0;
     }
 }
 

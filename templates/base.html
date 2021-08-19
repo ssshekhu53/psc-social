@@ -32,14 +32,14 @@
                         <img src="https://i.imgur.com/msO7f5I.png" alt="" class="d-inline-block img-fluid">
                         PSCSocial
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
                             <a class="nav-link" href="#">Features</a>
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="#contact">Contact Us</a>
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </div>
                     </div>
@@ -47,6 +47,14 @@
               </nav>
         </header>
 
+        <div class="ui sidebar inverted vertical menu">
+            <a class="item" href="/">
+                Home
+            </a>
+            <a class="item" href="#contact">
+                Contact
+            </a>
+        </div>
         {% block body %}
         {% endblock %}
 

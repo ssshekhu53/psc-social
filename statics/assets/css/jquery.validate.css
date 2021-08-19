@@ -1,6 +1,8 @@
 label.error {
     width: 100%;
-    color: crimson;
-    position: absolute;
-    bottom: -25px;
+    color: #f70e0e;
+    font-weight: bold;
+    /*position: absolute;*/
+    /*bottom: -25px;*/
+    text-shadow: 0 0 1px #000;
 }

@@ -125,6 +125,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "statics"),
 ]
 
+# Email configurations
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'b93108daa3b712'
+EMAIL_HOST_PASSWORD = '4fb0da7b8e4568'
+EMAIL_PORT = '2525'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

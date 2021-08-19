@@ -6,6 +6,7 @@
 
         {% block css %}
             <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.validate.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'assets/css/contact-section.css' %}">
             <style>
                 .card {
                     border-radius: 25px;
@@ -17,7 +18,7 @@
         {% block body %}
         <main>
             <!-- Hero -->
-            <div class="" id="hero-section">
+            <div class="" id="hero-section" style="position: relative;">
                 <div class="d-flex justify-content-center align-items-center text-white text-center px-3 hero-text">
                     <h1 class="fw-bold">Welcome to PSC Social</h1>
                 </div>
@@ -26,7 +27,7 @@
         </main>
 
         <!-- Contact -->
-        <section id="services">
+        <section id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -34,56 +35,37 @@
                         <h3 class="section-subheading text-muted">We would love to hear from you</h3>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-md-8"></div>
-                        <div class="col-sm-4 col-md-4">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="header bg-primary text-white py-3">
-                                        <h2 class="text-center fw-bold">Send Message</h2>
-                                    </div>
-                                    <div class="description p-5 py-4">
-                                        <form action="" class="ui form" id="contact-form">
-                                            <div class="form-messages"><div class="alert" style="display: none"></div></div>
-                                            {% csrf_token %}
-                                            <div class="field pb-3">
-                                                <label for="name">Name</label>
-                                                <div class="ui left icon fluid input">
-                                                    <input type="text" id="name" name="name" placeholder="Name" />
-                                                    <i class="user icon"></i>
-                                                </div>
-                                            </div>
-                                            <div class="field pb-3">
-                                                <label for="email">Email</label>
-                                                <div class="ui left icon fluid input">
-                                                    <input type="email" id="email" name="email" placeholder="Your Email" />
-                                                    <i class="envelope icon"></i>
-                                                </div>
-                                            </div>
-                                            <div class="field pb-3">
-                                                <label for="phone">Phone</label>
-                                                <div class="ui left icon fluid input">
-                                                    <input type="tel" id="phone" name="phone" placeholder="Your Phone" />
-                                                    <i class="phone icon"></i>
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                <label for="message">Message</label>
-                                                <textarea name="message" id="message" cols="30" rows="3" placeholder="Your Message"></textarea>
-                                            </div>
-                                            <div class="text-center">
-                                                <button class="ui violet animated button">
-                                                    <div class="visible content">Send Message</div>
-                                                    <div class="hidden content">
-                                                        <i class="paper plane icon"></i>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                <div class="container d-flex justify-content-center">
+                    <div class="form">
+                        <div class="contact-info">
+                            <h3 class="title">Let's get in touch</h3>
+                            <p class="text"> Contact us with the following details. and fillup the form with the details. </p>
+                            <div class="info">
+                                <div class="social-information"> <i class="fa fa-map-marker"></i>
+                                    <p>NPM,NY,USA</p>
+                                </div>
+                                <div class="social-information"> <i class="fa fa-envelope-o"></i>
+                                    <p>contact@bbbootstrap.com</p>
+                                </div>
+                                <div class="social-information"> <i class="fa fa-mobile-phone"></i>
+                                    <p>+1 989 989 9898 </p>
                                 </div>
                             </div>
+                            <div class="social-media">
+                                <p>Connect with us :</p>
+                                <div class="social-icons"> <a href="#"> <i class="fa fa-facebook-f"></i> </a> <a href="#"> <i class="fa fa-twitter"></i> </a> <a href="#"> <i class="fa fa-instagram"></i> </a> <a href="#"> <i class="fa fa-linkedin"></i> </a> </div>
+                            </div>
+                        </div>
+                        <div class="contact-info-form">
+                            <form action="{% url 'addEnquiry' %}" id="contact-form">
+                                {% csrf_token %}
+                                <h3 class="title">Contact us</h3>
+                                <div class="social-input-containers"> <input type="text" name="name" class="input" placeholder="Name" /> </div>
+                                <div class="social-input-containers"> <input type="email" name="email" class="input" placeholder="Email" /> </div>
+                                <div class="social-input-containers"> <input type="tel" name="phone" class="input" placeholder="Phone" /> </div>
+                                <div class="social-input-containers textarea"> <textarea name="message" class="input" placeholder="Message"></textarea> </div>
+                                <button type="submit" class="btn">Send</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -11,11 +11,15 @@ $(document).ready(function() {
 });
 
 function navbarTransition() {
-    if($(this).scrollTop()>500)
+    if($(this).scrollTop()>100)
         $('.navbar').addClass('bg-blue').removeClass('bg-none');
     else
         $('.navbar').removeClass('bg-blue').addClass('bg-none');
 }
+
+$(document).on('click', '.navbar-toggler', function () {
+    $('.ui.sidebar').sidebar('toggle');
+})
 
 $(window).scroll(function() {
     navbarTransition();
