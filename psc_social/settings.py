@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-jti4x8ro9anowjcg*l3v+&_9r8@y+=aof^zk5h%_$f+%8sq(k)
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'psc-social.herokuapp.com',
     'localhost'
 ]
@@ -131,10 +132,11 @@ STATICFILES_DIRS = [
 
 # Email configurations
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'b93108daa3b712'
-EMAIL_HOST_PASSWORD = '4fb0da7b8e4568'
-EMAIL_PORT = '2525'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'shekharsrivastava241@gmail.com'
+EMAIL_HOST_PASSWORD = 'Shekhar@73'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Default primary key field type

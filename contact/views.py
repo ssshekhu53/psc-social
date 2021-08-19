@@ -24,7 +24,7 @@ def add_contact(request):
             message='',
             html_message=f'''Hi {name}, <br><br>
             Thank you for messaging us. We will get back to you within a day.<br><br>
-            Regards<br>
+            Regards,<br>
             Team PSCSocial''',
             from_email='PSCSocial',
             recipient_list=[email]
