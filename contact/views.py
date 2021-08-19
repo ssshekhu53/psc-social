@@ -19,16 +19,19 @@ def add_contact(request):
         entry.save()
         response['code'] = 200
         response['message'] = 'Enquiry Added'
-        send_mail(
-            subject='PSCSocial: Received your message',
-            message='',
-            html_message=f'''Hi {name}, <br><br>
+        try:
+            send_mail(
+                subject='PSCSocial: Received your message',
+                message='',
+                html_message=f'''Hi {name}, <br><br>
             Thank you for messaging us. We will get back to you within a day.<br><br>
             Regards,<br>
             Team PSCSocial''',
-            from_email='PSCSocial',
-            recipient_list=[email]
-        )
+                from_email='PSCSocial',
+                recipient_list=[email]
+            )
+        except Exception as e:
+            response['mail'] = str(e)
         return HttpResponse(json.dumps(response), content_type="application/json")
     else:
         response['code'] = 500
