@@ -34,7 +34,7 @@ $('#contact-form').validate({
             success: function(response) {
                 console.log(response);
                 $(form).find('input, textarea, button').attr('disabled', false);
-                $(form).find('button').text('Send Message');
+                $(form).find('button').text('Send');
                 if(response.code==200) {
                     Swal.fire({
                         icon: 'success',
@@ -54,7 +54,7 @@ $('#contact-form').validate({
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(textStatus+' '+jqXHR+' '+errorThrown);
                 $(form).find('input, textarea, button').attr('disabled', false);
-                $(form).find('button').text('Send Message');
+                $(form).find('button').text('Send');
                 $('#form-messages .alert').addClass('alert-danger').html('<p class="h5">We are facing litle issue. Comeback after a while.</p>').show();
                 setTimeout(() => { $('#form-messages .alert').fadeOut(1000, () => { $('#form-message .alert').removeClass('alert-danger'); }); }, 3000);
             }
