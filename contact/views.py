@@ -31,6 +31,7 @@ def add_contact(request):
                 recipient_list=[email]
             )
         except Exception as e:
+            print(e)
             response['mail'] = str(e)
         return HttpResponse(json.dumps(response), content_type="application/json")
     else:
