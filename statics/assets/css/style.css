@@ -37,7 +37,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    height: 70vh;
 }
 
 #hero-section::before {
