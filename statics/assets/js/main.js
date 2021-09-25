@@ -1,7 +1,8 @@
 $(document).ready(function() {
+    let heroString=$(window).width()>500?'<h1 class="fw-bold">Welcome to PSC Social</h1>':'<h2 class="fw-bold">Welcome to PSC Social</h2>';
     let typewriter = new Typewriter('.hero-text', {
         loop: true,
-        strings: ['<h1 class="fw-bold">Welcome to PSC Social</h1>'],
+        strings: [heroString],
         autoStart: true,
         cursor: ""
     });
