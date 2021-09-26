@@ -220,3 +220,7 @@ section h3.section-subheading {
     margin: 15px 0;
     text-transform: none;
 }
+
+.sidebar.menu.blue {
+    background-image: linear-gradient(to right top, #604495, #5e3ba5, #5a30b5, #5523c4, #4e0bd4) !important;
+}

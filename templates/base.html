@@ -45,7 +45,7 @@
         <header>
             <nav class="navbar navbar-expand-lg fixed-top navbar navbar-dark bg-none py-4">
                 <div class="container">
-                    <a class="navbar-brand fw-bold" href="./index.html">
+                    <a class="navbar-brand fw-bold" href="/">
                         <img src="{% static 'assets/img/logo.png' %}" alt="" class="d-inline-block img-fluid">
                         PSCSocial
                     </a>
@@ -72,15 +72,21 @@
               </nav>
         </header>
 
-        <div class="ui sidebar inverted vertical menu">
+        <div class="ui sidebar inverted vertical menu blue">
+            <div class="h1 px-3 py-2 fw-bold border-bottom border-1 border-white">
+                <a class="navbar-brand fw-bold text-white" href="/">
+                    <img src="{% static 'assets/img/logo.png' %}" alt="" class="d-inline-block img-fluid">
+                    PSCSocial
+                </a>
+            </div>
             {% setvar '' as active %}
             {% if request.endpoint == '' or request.endpoint == 'home' or request.endpoint|length == 0 %}
             {% setvar 'active' as active %}
             {% endif %}
-            <a class="item {{ active }}" href="/">
+            <a class="item {{ active }} fw-bold" href="/">
                 Home
             </a>
-            <a class="item" href="#contact">
+            <a class="item fw-bold" href="#contact">
                 Contact
             </a>
         </div>
