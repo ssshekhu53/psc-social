@@ -83,10 +83,12 @@
             {% if request.endpoint == '' or request.endpoint == 'home' or request.endpoint|length == 0 %}
             {% setvar 'active' as active %}
             {% endif %}
-            <a class="item {{ active }} fw-bold" href="/">
+            <a class="item icon {{ active }} fw-bold" href="/">
+                <i class="fas fa-home me-2"></i>
                 Home
             </a>
-            <a class="item fw-bold" href="#contact">
+            <a class="item icon fw-bold" href="#contact">
+                <i class="fas fa-id-card-alt me-2"></i>
                 Contact
             </a>
         </div>
