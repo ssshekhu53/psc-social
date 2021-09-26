@@ -65,7 +65,12 @@
                                 {% endif %}
                             <a class="nav-link {{ active }}" href="/blogs">Blogs</a>
                             <a class="nav-link" href="#contact">Contact Us</a>
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                {% setvar '' as active %}
+                                {% if request.endpoint == 'signup' %}
+                                {% setvar 'active' as active %}
+                                {% endif %}
+                            <a class="nav-link" href="/signup">Sign Up</a>
+                            <a href="/login" class="btn btn-warning fw-bold">Login</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +78,7 @@
         </header>
 
         <div class="ui sidebar inverted vertical menu blue">
-            <div class="h1 px-3 py-2 fw-bold border-bottom border-1 border-white">
+            <div class="h1 p-3 fw-bold border-bottom border-1 border-white">
                 <a class="navbar-brand fw-bold text-white" href="/">
                     <img src="{% static 'assets/img/logo.png' %}" alt="" class="d-inline-block img-fluid">
                     PSCSocial
@@ -88,8 +93,24 @@
                 Home
             </a>
             <a class="item icon fw-bold" href="#contact">
-                <i class="fas fa-id-card-alt me-2"></i>
+                <i class="fas fa-mail-bulk me-2"></i>
                 Contact
+            </a>
+            {% setvar '' as active %}
+            {% if request.endpoint == 'signup' %}
+            {% setvar 'active' as active %}
+            {% endif %}
+            <a class="item icon {{ active }} fw-bold" href="/signup">
+                <i class="fas fa-user-plus me-2"></i>
+                Sign Up
+            </a>
+            {% setvar '' as active %}
+            {% if request.endpoint == 'login' %}
+            {% setvar 'active' as active %}
+            {% endif %}
+            <a class="item icon {{ active }} fw-bold text-warning" href="/login">
+                <i class="fas fa-sign-in-alt me-2"></i>
+                Login
             </a>
         </div>
         {% block body %}
