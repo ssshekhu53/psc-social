@@ -1,10 +1,20 @@
-$('#login-form').validate({
+$('#signup-form').validate({
     rules: {
+        name: 'required',
         username: 'required',
+        email: {
+            required: true,
+            email: true
+        },
         password: 'required'
     },
     messages: {
-        username: "You missed username/email address",
+        name: "You must have a name, don't you?",
+        username: "Create a username",
+        email: {
+            required: "You missed email address",
+            email: "That's not a valid email address"
+        },
         password: "You forgot the password!"
     },
     errorPlacement: function(error, element) {
