@@ -43,7 +43,7 @@
     <body class="bg-gradient bg-light">
 
         <header>
-            <nav class="navbar navbar-expand-lg fixed-top navbar navbar-dark bg-none py-4">
+            <nav class="navbar navbar-expand-lg fixed-top navbar navbar-dark py-4 {% if request.path == "/" %} home bg-none {% else %} bg-blue {% endif %}">
                 <div class="container">
                     <a class="navbar-brand fw-bold" href="/">
                         <img src="{% static 'assets/img/logo.png' %}" alt="" class="d-inline-block img-fluid">
@@ -55,21 +55,21 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav fw-bold">
                                 {% setvar '' as active %}
-                                {% if request.endpoint == '' or request.endpoint == 'home' or request.endpoint|length == 0 %}
+                                {% if request.path == '/' or request.path == '/home' %}
                                 {% setvar 'active' as active %}
                                 {% endif %}
                             <a class="nav-link {{ active }}" href="/">Home</a>
                                 {% setvar '' as active %}
-                                {% if request.endpoint == 'blogs' %}
+                                {% if request.path == '/blogs' %}
                                 {% setvar 'active' as active %}
                                 {% endif %}
                             <a class="nav-link {{ active }}" href="/blogs">Blogs</a>
                             <a class="nav-link" href="#contact">Contact Us</a>
                                 {% setvar '' as active %}
-                                {% if request.endpoint == 'signup' %}
+                                {% if request.path == '/signup' %}
                                 {% setvar 'active' as active %}
                                 {% endif %}
-                            <a class="nav-link" href="/signup">Sign Up</a>
+                            <a class="nav-link {{ active }}" href="/signup">Sign Up</a>
                             <a href="/login" class="btn btn-warning fw-bold">Login</a>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                 </a>
             </div>
             {% setvar '' as active %}
-            {% if request.endpoint == '' or request.endpoint == 'home' or request.endpoint|length == 0 %}
+            {% if request.path == '' or request.path == '/home' or request.path|length == 0 %}
             {% setvar 'active' as active %}
             {% endif %}
             <a class="item icon {{ active }} fw-bold" href="/">
@@ -97,7 +97,7 @@
                 Contact
             </a>
             {% setvar '' as active %}
-            {% if request.endpoint == 'signup' %}
+            {% if request.path == '/signup' %}
             {% setvar 'active' as active %}
             {% endif %}
             <a class="item icon {{ active }} fw-bold" href="/signup">

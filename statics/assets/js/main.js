@@ -12,10 +12,12 @@ $(document).ready(function() {
 });
 
 function navbarTransition() {
-    if($(this).scrollTop()>100)
-        $('.navbar').addClass('bg-blue').removeClass('bg-none');
-    else
-        $('.navbar').removeClass('bg-blue').addClass('bg-none');
+    if($('.navbar').hasClass('home')) {
+        if ($(this).scrollTop() > 100)
+            $('.navbar').addClass('bg-blue').removeClass('bg-none');
+        else
+            $('.navbar').removeClass('bg-blue').addClass('bg-none');
+    }
 }
 
 $(document).on('click', '.navbar-toggler', function () {
