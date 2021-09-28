@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import home, login_page, signup_page
+from .views import home, login_page, signup_page, error404
 from contact import urls as contact_urls
 
 urlpatterns = [
@@ -25,3 +25,6 @@ urlpatterns = [
     path('signup', signup_page),
     path('enquiries/', include(contact_urls)),
 ]
+
+
+handler404 = 'psc_social.views.error404'

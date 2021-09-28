@@ -1,3 +1,6 @@
+DEBUG = True
+
+
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = 'b93108daa3b712'
 EMAIL_HOST_PASSWORD = '4fb0da7b8e4568'
