@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import home, login_page, signup_page, error404
+from .views import home, login_page, signup_page
 from contact import urls as contact_urls
 
 urlpatterns = [
