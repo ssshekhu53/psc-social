@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --no-input; gunicorn myapp.wsgi --log-file - --log-level debug
+web: waitress-serve --port=$PORT psc_social.wsgi:application
