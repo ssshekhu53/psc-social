@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 ]
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-DISABLE_COLLECTSTATIC = 1
+# DISABLE_COLLECTSTATIC = 1
 
 # Email configurations
 
