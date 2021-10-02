@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import home, login_page, signup_page
 from contact import urls as contact_urls
+from user import urls as user_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +25,7 @@ urlpatterns = [
     path('login', login_page),
     path('signup', signup_page),
     path('enquiries/', include(contact_urls)),
+    path('user/', include(user_urls)),
 ]
 
 

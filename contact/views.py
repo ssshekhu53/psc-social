@@ -33,7 +33,8 @@ def add_contact(request):
         except Exception as e:
             print(e)
             response['mail'] = str(e)
-        return HttpResponse(json.dumps(response), content_type="application/json")
+        finally:
+            return HttpResponse(json.dumps(response), content_type="application/json")
     else:
         response['code'] = 500
         response['message'] = 'Enquiry Not Added'

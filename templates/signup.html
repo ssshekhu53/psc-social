@@ -25,7 +25,9 @@
                     <div class="wrapper bg-white">
                         <div class="h2 text-center">Sign Up</div>
                         <div class="h4 text-muted text-center pt-2">Fill up your details</div>
-                        <form class="pt-3" id="signup-form">
+                        <form class="pt-3" id="signup-form" action="{% url 'signup' %}">
+                            <div id="form-messages"><div class="alert" style="display: none;"></div></div>
+                            {% csrf_token %}
                             <div class="form-group py-2">
                                 <div class="input-field"> <span class="fas fa-user p-2"></span> <input type="text" name="name" id="name" placeholder="Name" required class=""> </div>
                                 <div class="input-error"></div>
@@ -42,7 +44,7 @@
                                 <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password" name="password" id="password" placeholder="Create Password" required class=""> <button type="button" class="btn bg-white text-muted" id="show-pwd-btn"> <span class="far fa-eye-slash"></span> </button> </div>
                                 <div class="input-error"></div>
                             </div>
-                            <button class="btn btn-block btn-lg w-100 text-center my-3 fw-bold">Sign Up</button>
+                            <button class="btn btn-block btn-lg w-100 text-center my-3 fw-bold" type="submit">Sign Up</button>
                             <div class="text-center pt-3 text-muted">Already a member? <a href="/login">Login</a></div>
                         </form>
                     </div>
