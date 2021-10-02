@@ -186,3 +186,22 @@ input {
     border: none;
     box-shadow: none;
 }
+
+form.form.loader {
+    position: relative;
+}
+
+form.form.loader::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Loading";
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
