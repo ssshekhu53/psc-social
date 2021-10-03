@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+        {% block title %}
+        <title>Email Verification - PSC Social</title>
+        {% endblock %}
+
+        {% block css %}
+            <style>
+                .card {
+                    border-radius: 25px;
+                    box-shadow: 0 0 20px 5px #8080808f;
+                }
+            </style>
+        {% endblock %}
+
+        {% block body %}
+        <main>
+            <div class="my-5"></div>
+
+            <!-- Login -->
+            <section id="login" class="bg-white" style="">
+                <div class="container d-flex justify-content-center align-items-center h-100 mt-5">
+                    {% if code == 404 %}
+                        <div class="d-block text-center mt-4">
+                            <img src="{% static 'assets/img/email-verified.png' %}" class="img-fluid" style="width: 30rem;" />
+                            <h1>Your account has been verified</h1>
+                            <a class="btn btn-lg btn-outline-success mt-3 fw-bold" href="/login">Go To Login</a>
+                        </div>
+                    {% else %}
+                        <div class="d-block text-center mt-4">
+                            <img src="{% static 'assets/img/dinosaur.png' %}" class="img-fluid" style="width: 18rem;" />
+                            <h1 class="">{{ message }}</h1>
+                            <a class="btn btn-lg btn-outline-primary mt-3 fw-bold" href="/">Return To Home</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </section>
+            <!-- Login -->
+
+        </main>
+        {% endblock %}
+
+        {% block js %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script type="text/javascript" src="{% static 'assets/js/login.js' %}"></script>
+        {% endblock %}

@@ -4,7 +4,7 @@ from .models import User, TokenVerification
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'email', 'username', 'name', 'phone', 'createdAt')
+    list_display = ('id', 'email', 'username', 'name', 'phone', 'createdAt', 'verified')
 
 
 @admin.register(TokenVerification)

@@ -25,7 +25,9 @@
                     <div class="wrapper bg-white">
                         <div class="h2 text-center">Login</div>
                         <div class="h4 text-muted text-center pt-2">Enter your login details</div>
-                        <form class="pt-3" id="login-form">
+                        <form class="pt-3" id="login-form" action="{% url 'do_login' %}">
+                            <div id="form-messages"><div class="alert" style="display: none;"></div></div>
+                            {% csrf_token %}
                             <div class="form-group py-2">
                                 <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" name="username" id="username" placeholder="Username or Email Address" required class=""> </div>
                                 <div class="input-error"></div>
@@ -38,7 +40,7 @@
                                 <div class="remember"> <label class="option text-muted"> Remember me <input type="radio" name="radio"> <span class="checkmark"></span> </label> </div>
                                 <div class="ms-auto"> <a href="#" id="forgot">Forgot Password?</a> </div>
                             </div>
-                            <button class="btn btn-block btn-lg w-100 text-center my-3 fw-bold">Log in</button>
+                            <button class="btn btn-block btn-lg w-100 text-center my-3 fw-bold" type="submit">Log in</button>
                             <div class="text-center pt-3 text-muted">Not a member? <a href="/signup">Sign up</a></div>
                         </form>
                     </div>
