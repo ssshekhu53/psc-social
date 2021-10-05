@@ -31,11 +31,7 @@ $('#login-form').validate({
                 $(form).find('input, textarea, button').attr('disabled', false);
                 $(form).find('button[type="submit"]').text('Log In');
                 if(response.code==200) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Logged In Successfully',
-                    });
-                    $(form).trigger('reset');
+                    window.location.href="/dashboard"
                 }
                 else {
                     $('#form-messages .alert').addClass('alert-danger').html(`<p class="h5">${response.message}</p>`).show();

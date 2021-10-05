@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+        {% block title %}
+        <title>Logged In - PSC Social</title>
+        {% endblock %}
+
+        {% block css %}
+            <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.validate.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'assets/css/login-section.css' %}">
+            <style>
+                .card {
+                    border-radius: 25px;
+                    box-shadow: 0 0 20px 5px #8080808f;
+                }
+            </style>
+        {% endblock %}
+
+        {% block body %}
+        <main>
+            <div class="my-5"></div>
+
+            <!-- Login -->
+            <section id="login" class="bg-white">
+                <div class="container">
+                    <div class="wrapper bg-white">
+                        <div class="h2 text-center">Logged In</div>
+                        {% if request.session.login|length != 0 %}
+                        <a href="/logout" class="btn btn-success text-white">Logout</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+            <!-- Login -->
+
+        </main>
+        {% endblock %}
+
+        {% block js %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script type="text/javascript" src="{% static 'assets/js/login.js' %}"></script>
+        {% endblock %}

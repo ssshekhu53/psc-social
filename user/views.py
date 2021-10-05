@@ -68,6 +68,7 @@ def do_login(request):
             if qs.password == password:
                 response['code'] = 200
                 response['message'] = "Logged in successfully"
+                request.session['login'] = username
             else:
                 response['code'] = 500
                 response['message'] = "Incorrect username/email and password combination"
@@ -77,7 +78,6 @@ def do_login(request):
         except Exception as e:
             response['code'] = 404
             response['message'] = "No account with this email or username"
-            print(e)
         finally:
             return HttpResponse(json.dumps(response), content_type='application/json')
     else:
