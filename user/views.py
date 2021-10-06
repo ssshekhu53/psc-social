@@ -108,3 +108,57 @@ def verify_email(request):
             return render(request, 'email-verification-status.html', response)
     else:
         return redirect('/signup')
+
+
+def send_reset_link(request):
+    response = {}
+    if request.method == 'POST':
+        email = request.POST['email']
+        try:
+            User.objects.get(email=email)
+            entry = TokenVerification()
+            token = md5(str(datetime.datetime.now()).encode()).hexdigest()
+            entry.param = email
+            entry.token = token
+            entry.save()
+            host = request.get_host()
+            url = 'http://' if '127.0.0.1' in host else 'https://'
+            url += f'{ host }/reset-password?param={ email }&token={ token }'
+            message = render_to_string('email_templates/reset-password.html', {'url': url})
+            send_mail(
+                subject='PSCSocial: Reset Account Password',
+                message='',
+                html_message=message,
+                from_email='PSCSocial',
+                recipient_list=[email]
+            )
+            response['code'] = 200
+            response['message'] = 'Reset link sent successfully'
+        except User.DoesNotExist as e:
+            response['code'] = 404
+            response['message'] = "No account with this email"
+        except Exception as e:
+            response['email'] = {}
+            response['email']['code'] = 500
+            response['email']['message'] = str(e)
+        finally:
+            return HttpResponse(json.dumps(response), content_type='application/json')
+    else:
+        response['code'] = 500
+        response['message'] = 'Invalid method'
+        return HttpResponse(json.dumps(response), content_type='application/json')
+
+
+def reset_password(request):
+    response = {}
+    email = request.POST['email']
+    password = md5(request.POST['password'].encode()).hexdigest()
+    try:
+        User.objects.filter(email=email).update(password=password)
+        response['code'] = 200
+        response['message'] = "Successfully"
+    except Exception as e:
+        response['code'] = 500
+        response['message'] = "We are facing little issue. Comeback after a while."
+    finally:
+        return HttpResponse(json.dumps(response), content_type='application/json')
