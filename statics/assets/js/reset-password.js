@@ -118,7 +118,7 @@ $('#reset-password-form').validate({
 });
 
 $(document).on('click', '.show-pwd-btn', function () {
-   let ele= $(this).prev('input[type="password"]');
+   let ele= $(this).prev('input[aria-type="password"]');
    let type=$(ele).attr('type');
    if(type==='text') {
        $(ele).attr('type', 'password');
