@@ -13,13 +13,13 @@ def home(request):
 
 def login_page(request):
     if check_session(session=request.session):
-        return redirect('/dashboard')
+        return redirect('/user/dashboard')
     return render(request, 'login.html')
 
 
 def signup_page(request):
     if check_session(session=request.session):
-        return redirect('/dashboard')
+        return redirect('/user/dashboard')
     return render(request, 'signup.html')
 
 
@@ -31,13 +31,13 @@ def logout(request):
 
 def forgot_password_page(request):
     if check_session(session=request.session):
-        return redirect('/dashboard')
+        return redirect('/user/dashboard')
     return render(request, 'forgot-password.html')
 
 
 def reset_password_page(request):
     if check_session(session=request.session):
-        return redirect('/dashboard')
+        return redirect('/user/dashboard')
     response = {}
     if 'param' in request.GET and 'token' in request.GET:
         email = request.GET['param']

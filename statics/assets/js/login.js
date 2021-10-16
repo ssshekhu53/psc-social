@@ -31,7 +31,7 @@ $('#login-form').validate({
                 $(form).find('input, textarea, button').attr('disabled', false);
                 $(form).find('button[type="submit"]').text('Log In');
                 if(response.code==200) {
-                    window.location.href="/dashboard"
+                    window.location.href="/user/dashboard"
                 }
                 else {
                     $('#form-messages .alert').addClass('alert-danger').html(`<p class="h5">${response.message}</p>`).show();
